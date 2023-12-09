@@ -28,14 +28,14 @@ def saveData(data):
  data = json.dump(data, file)
  file.close()
  
-def inviteanotherGuest(data):
+def inviteAnotherGuest(data):
  name = input("Invite another guest or press enter to return to menu: ")
  if name == "":
   return
  else:
   data["guests"].append(name)
   saveData(data)
-  inviteanotherGuest(data)
+  inviteAnotherGuest(data)
 
 
 # hm1: while/for + menu + interactive + remove
@@ -56,7 +56,7 @@ while True:
  item = int(input())
  if item == 1:
   saveData(inviteGuest(data))
-  inviteanotherGuest(data)
+  inviteAnotherGuest(data)
  elif item == 2:
   pos = input("hit enter to cancel\nenter guest position to remove: ")
   if pos == "":
